@@ -140,11 +140,13 @@ void AMarsSimPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputC
 void AMarsSimPawn::MoveForward(float Val)
 {
 	GetVehicleMovementComponent()->SetThrottleInput(Val);
+	//UE_LOG(LogTemp, Warning, TEXT("forward pressed %d"), Val);
 }
 
 void AMarsSimPawn::MoveRight(float Val)
 {
 	GetVehicleMovementComponent()->SetSteeringInput(Val);
+	//UE_LOG(LogTemp, Warning, TEXT("forward pressed %d"), Val);
 }
 
 void AMarsSimPawn::OnHandbrakePressed()

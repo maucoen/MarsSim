@@ -4,7 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "RoverMovementComponent.h"
+#include "RoverReplicator.h"
 #include "Rover.generated.h"
+
+
 
 UCLASS()
 class MARSSIM_API ARover : public APawn
@@ -27,8 +31,13 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	FVector Velocity;
 
 	void MoveForward(float Value);
-	
+	void MoveRight(float Value);
+
+	UPROPERTY(VisibleAnywhere) //not edit anywhere, as it allows to change the pointer 
+		URoverMovementComponent* MovementComponent;
+
+	UPROPERTY(VisibleAnywhere) //not edit anywhere, as it allows to change the pointer 
+		URoverReplicator* Replicator;
 };
